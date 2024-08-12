@@ -1,0 +1,15 @@
+syntax = "proto3";
+package private_avito_api_executor;
+
+message GetAmountAdsRequest {
+  uint32 location_id = 1;
+  string query = 2;
+}
+
+message GetAmountAdsResponse {
+  uint32 amount = 1;
+}
+
+service PrivateAvitoApiExecutor {
+  rpc get_amount_ads(GetAmountAdsRequest) returns (GetAmountAdsResponse);
+}
